@@ -1,0 +1,56 @@
+# =====================================================
+# SIG-GCM — .gitignore
+# Arquivos que NÃO devem ser enviados para o GitHub
+# =====================================================
+
+# ─── CREDENCIAIS E DADOS SENSÍVEIS ────────────────
+# NUNCA commite estes arquivos — contêm senhas reais!
+config/database.php
+config/dev_credentials.php
+.env
+.env.*
+*.env
+
+# ─── PAINEL DE DESENVOLVIMENTO (OCULTO) ───────────
+dev/
+
+# ─── UPLOADS DE USUÁRIOS ──────────────────────────
+uploads/*
+!uploads/.gitkeep
+
+# ─── LOGS E CACHE ─────────────────────────────────
+*.log
+logs/
+cache/
+tmp/
+temp/
+
+# ─── SISTEMA OPERACIONAL ──────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── IDEs E EDITORES ──────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+nbproject/
+
+# ─── PHP ──────────────────────────────────────────
+*.phar
+vendor/
+composer.lock
+
+# ─── NODE (se usar build tools) ───────────────────
+node_modules/
+package-lock.json
+dist/
+
+# ─── BACKUPS ──────────────────────────────────────
+*.bak
+*.backup
+*.old
+*.orig

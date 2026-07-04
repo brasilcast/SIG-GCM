@@ -1,0 +1,116 @@
+/*
+ * =========================================
+ * SIG-GCM — Sistema Integrado de Gestão
+ * Guarda Civil Municipal
+ * =========================================
+ * SISTEMA DE TESTE — Projeto acadêmico (TG/TC)
+ * Desenvolvido 100% por:
+ * Autor   : Rafaela Cristina Alcântara da Silva
+ * GitHub  : https://github.com/rafaela13c
+ * LinkedIn: https://www.linkedin.com/in/rafaela-cas1308/
+ * =========================================
+ * Este sistema NÃO é oficial e NÃO será
+ * utilizado pela GCM. Uso exclusivo para
+ * fins de estudo acadêmico.
+ * =========================================
+ */
+/* =========================================
+   SIG-GCM — Relatórios CSS
+   ========================================= */
+
+/* KPI Cards Grid */
+.rel-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.rel-kpi-card {
+    border-radius: 12px;
+    padding: 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: .3rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.rel-kpi-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.22); }
+.rel-kpi-icon { font-size: 1.5rem; opacity: .8; }
+.rel-kpi-value { font-size: 1.6rem; font-weight: 800; line-height: 1; }
+.rel-kpi-label { font-size: .72rem; font-weight: 500; opacity: .85; letter-spacing: .02em; text-transform: uppercase; }
+
+.rel-kpi-blue   { background: linear-gradient(135deg,#2563eb,#3b82f6); color:#fff; }
+.rel-kpi-green  { background: linear-gradient(135deg,#059669,#10b981); color:#fff; }
+.rel-kpi-red    { background: linear-gradient(135deg,#dc2626,#ef4444); color:#fff; }
+.rel-kpi-orange { background: linear-gradient(135deg,#d97706,#f59e0b); color:#fff; }
+.rel-kpi-purple { background: linear-gradient(135deg,#7c3aed,#8b5cf6); color:#fff; }
+.rel-kpi-teal   { background: linear-gradient(135deg,#0d9488,#14b8a6); color:#fff; }
+.rel-kpi-gray   { background: linear-gradient(135deg,#475569,#64748b); color:#fff; }
+
+/* Charts Grid */
+.rel-charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.rel-chart-box { padding: 1.25rem; }
+.rel-chart-title {
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    margin-bottom: 1rem;
+}
+.rel-chart-title i { margin-right: .4rem; }
+
+/* Filter bar */
+.rel-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: .85rem 1rem;
+}
+.rel-filter-bar .form-group { margin-bottom: 0; min-width: 130px; }
+.rel-filter-bar label { font-size: .77rem; font-weight: 600; }
+.rel-filter-bar .btn { align-self: flex-end; }
+
+/* Summary numbers */
+.rel-summary-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.rel-summary-item {
+    flex: 1;
+    min-width: 120px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: .85rem 1rem;
+    text-align: center;
+}
+.rel-summary-item .val { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+.rel-summary-item .lbl { font-size: .72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .03em; }
+
+/* Tables inside reports */
+.rel-table { width: 100%; font-size: .85rem; border-collapse: collapse; }
+.rel-table th { background: var(--sidebar-bg); padding: .5rem .75rem; text-align: left; font-size: .75rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); }
+.rel-table td { padding: .5rem .75rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.rel-table tr:hover td { background: var(--hover-bg); }
+
+@media (max-width: 600px) {
+    .rel-kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .rel-charts-grid { grid-template-columns: 1fr; }
+}

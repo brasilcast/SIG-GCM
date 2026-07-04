@@ -1,0 +1,23 @@
+Options -Indexes
+RewriteEngine On
+
+# Redirecionar para HTTPS se disponível
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Negar acesso direto a pastas sensíveis
+RewriteRule ^config/ - [F,L]
+RewriteRule ^core/ - [F,L]
+RewriteRule ^migrations/ - [F,L]
+RewriteRule ^models/ - [F,L]
+RewriteRule ^controllers/ - [F,L]
+RewriteRule ^views/ - [F,L]
+
+# Permitir acesso a assets e uploads
+RewriteRule ^assets/ - [L]
+RewriteRule ^uploads/ - [L]
+
+# Tudo passa pelo index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

@@ -1,0 +1,142 @@
+{
+  "sistema": {
+    "nome": "SIG-GCM",
+    "descricao": "Sistema Integrado de Gestão da Guarda Civil Municipal. É um projeto acadêmico demonstrativo, desenvolvido como Trabalho de Conclusão de Curso (TG/TC). Este sistema NÃO é oficial e NÃO deve ser usado operacionalmente.",
+    "versao": "1.2.0",
+    "autor": {
+      "nome": "Rafaela Cristina Alcântara da Silva",
+      "papel": "Desenvolvedora e Autora Principal",
+      "github": "https://github.com/rafaela13c",
+      "linkedin": "https://www.linkedin.com/in/rafaela-cas1308/"
+    },
+    "cidade": "Eldorado dos Ventos (SP)"
+  },
+  "perfis_usuario": {
+    "operador": {
+      "label": "Guarda Municipal (Operador)",
+      "descricao": "Perfil operacional básico. Responsável pela ponta do serviço público.",
+      "permissoes": [
+        "Visualizar dashboard basico",
+        "Criar e atualizar seus próprios talões de ocorrência",
+        "Preencher checklists de viatura",
+        "Registrar abastecimentos",
+        "Visualizar a sua escala semanal",
+        "Solicitar trocas de plantão",
+        "Registrar rondas escolares",
+        "Registrar visitas periódicas no módulo Maria da Penha"
+      ]
+    },
+    "inspetor": {
+      "label": "Inspetor (Supervisor)",
+      "descricao": "Perfil de supervisão de equipes e controle intermediário.",
+      "permissoes": [
+        "Ver todos os talões de ocorrência do sistema",
+        "Lançar escalas e gerenciar escalas comuns/administrativas",
+        "Aprovar solicitações de troca de plantão",
+        "Cadastrar novas vítimas no módulo Maria da Penha",
+        "Acessar relatórios e estatísticas básicas"
+      ]
+    },
+    "subcomandante": {
+      "label": "Subcomandante (Gestão e Recursos)",
+      "descricao": "Perfil de gestão administrativa intermediária.",
+      "permissoes": [
+        "Editar e gerenciar todos os talões de ocorrência",
+        "Gerenciar escalas semanais (comuns e administrativas)",
+        "Cadastrar viaturas da frota",
+        "Criar comunicados do comando para todos os guardas",
+        "Acessar relatórios gerenciais avançados",
+        "Criar e gerenciar contas de usuários"
+      ]
+    },
+    "comandante": {
+      "label": "Comandante (Direção Geral)",
+      "descricao": "Perfil estratégico de liderança e supervisão integral.",
+      "permissoes": [
+        "Acesso completo a todas as telas do sistema",
+        "Visualizar logs de auditoria detalhados e acessos de usuários",
+        "Gerenciar permissões individuais de cada usuário",
+        "Acessar relatórios gerenciais e administrativos de todos os módulos",
+        "Visualizar processos disciplinares da Corregedoria"
+      ]
+    },
+    "corregedor": {
+      "label": "Corregedor (Fiscalização)",
+      "descricao": "Perfil focado na corregedoria, processos disciplinares e auditoria.",
+      "permissoes": [
+        "Acesso integral ao módulo de Corregedoria (Processos Disciplinares)",
+        "Criar e atualizar processos disciplinares e movimentações",
+        "Acessar relatórios de auditoria e estatísticas",
+        "Visualizar dados operacionais (talões, frota, escalas) para fiscalização",
+        "Não possui acesso à criação de talões ou lançamento de escalas"
+      ]
+    },
+    "admin": {
+      "label": "Administrador do Sistema",
+      "descricao": "Acesso total e irrestrito a todas as tabelas, configurações e funcionalidades sem checagem de permissão."
+    }
+  },
+  "modulos": {
+    "dashboard": {
+      "descricao": "Tela inicial do sistema que consolida KPIs operacionais e alertas.",
+      "conteudo": "Exibe totalizadores de talões abertos no dia, viaturas em serviço, comunicados ativos, vítimas ativas no Maria da Penha e atalhos rápidos. Os dados diferem baseado no perfil logado."
+    },
+    "taloes": {
+      "descricao": "Módulo principal de registro de Ocorrências Policiais e Emergências (Talões).",
+      "fluxos": {
+        "criar": "1. Acesse o menu 'Talões' e clique em 'Novo Talão'.\n2. Insira as informações da ocorrência: Número, Tipo de Equipe, Viatura, Integrantes (GMs), Natureza da Ocorrência, Status (Aberto, Em Deslocamento, Em Atendimento, Encerrado), solicitante e descrição.\n3. Digite o endereço e confirme a centralização no mapa (Eldorado dos Ventos).\n4. Salve para registrar.",
+        "atualizar": "Na página de detalhes do Talão, use o formulário de atualizações rápidas para registrar ações da equipe no local ou alterar o status.",
+        "mapa_calor": "Exibe um visualizador gráfico espacial baseado nas coordenadas geográficas das ocorrências registradas para identificar áreas quentes."
+      }
+    },
+    "frota": {
+      "descricao": "Controle de Viaturas, Checklists diários e Abastecimentos de combustíveis.",
+      "fluxos": {
+        "checklists": "Ao assumir o serviço, o Guarda deve ir em 'Frota -> Checklists -> Novo Checklist', escolher a viatura e preencher a vistoria completa dos 16 itens de conservação (faróis, freios, pneus, óleo, água, rádio, etc.), registrando a quilometragem.",
+        "abastecimentos": "Registra o volume de combustível de abastecimento da viatura: posto, tipo de combustível, litros, valor total e quilometragem."
+      }
+    },
+    "escalas": {
+      "descricao": "Planejamento e publicação de escalas ordinárias (12x36) e administrativas (5x2).",
+      "regras": "Existem duas escalas concomitantes: a escala 12x36 (equipes operacionais Alfa, Beta, etc.) e a escala administrativa (5x2 - segunda a sexta com dois turnos: 07:30-11:30 e 13:00-17:00). Ambas podem ser impressas juntas usando o botão azul 'Gerar PDF'.",
+      "geracao": "O painel permite gerar automaticamente as escalas semanais para as datas informadas, alocando os guardas a cada equipe."
+    },
+    "rondas": {
+      "descricao": "Módulo de controle da Ronda Escolar nas escolas municipais cadastradas.",
+      "fluxos": "Os operadores visitam as escolas e preenchem o registro em 'Ronda Escolar -> Registrar Ronda', selecionando a escola, inserindo contato (diretora/porteiro), status da segurança (sem anormalidade, atitude suspeita, depredação) e observações."
+    },
+    "maria_penha": {
+      "descricao": "Módulo de acompanhamento da Patrulha Maria da Penha para mulheres sob medida protetiva.",
+      "fluxos": {
+        "medida_protetiva": "O inspetor cadastra a vítima e insere a Medida Protetiva judicial correspondente.",
+        "visita_preventiva": "Guards do serviço operacional fazem visitas periódicas na residência/local da vítima e registram se houve violação da medida, necessidade de suporte policial e anexam relatórios no sistema."
+      }
+    },
+    "corregedoria": {
+      "descricao": "Processos Disciplinares e acompanhamento de reclamações contra guardas municipais.",
+      "acesso": "Apenas perfis Corregedor, Comandante e Admin conseguem visualizar. O Corregedor cria o processo, adiciona os guardas envolvidos, a gravidade (leve, média, grave), anotações da sindicância e publica as movimentações da denúncia até a conclusão."
+    },
+    "comunicados": {
+      "descricao": "Mural de avisos gerais do Comando.",
+      "funcionalidade": "O comando ou subcomandante publica comunicados oficiais. Todos os usuários visualizam o comunicado no painel e devem clicar no botão 'Confirmar Leitura' para registrar que tomaram ciência (auditável)."
+    },
+    "utilidades": {
+      "clima": "Previsão do tempo de Eldorado dos Ventos (SP) obtida via API Windy e OpenWeather.",
+      "consultas": "Consultas integradas rápidas para CEP, CNPJ, Data de Feriados, Tabela FIPE de Veículos e Validador de Documentos (CPF, CNH, RG, Placa)."
+    }
+  },
+  "faq": [
+    {
+      "pergunta": "Como faço para trocar meu plantão/escala com outro colega?",
+      "resposta": "1. Acesse o menu 'Central do Agente -> Trocas de Plantão'.\n2. Clique em 'Solicitar Troca'.\n3. Preencha a sua escala de origem, selecione a escala de destino do colega substituto, indique o colega e insira a justificativa.\n4. O colega substituto e o Inspetor de serviço precisam aprovar a troca no painel para que ela seja efetivada no sistema."
+    },
+    {
+      "pergunta": "Como imprimir as escalas da semana?",
+      "resposta": "Acesse a tela 'Central do Agente -> Escala Semanal', selecione o filtro da semana que deseja e clique no botão azul 'Gerar PDF'. O sistema abrirá a interface de impressão limpa com as escalas operacionais (12x36) e administrativas (5x2) e acionará o comando de impressão do navegador ou salvar como PDF."
+    },
+    {
+      "pergunta": "O que fazer se o banco de dados for reiniciado?",
+      "resposta": "O SIG-GCM possui um instalador silencioso. Caso as tabelas não estejam presentes, o sistema as recriará e inserirá dados de teste automaticamente ao carregar a página de login."
+    }
+  ]
+}

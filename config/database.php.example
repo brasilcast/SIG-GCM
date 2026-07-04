@@ -1,0 +1,32 @@
+<?php
+/**
+ * =========================================
+ * SIG-GCM — Sistema Integrado de Gestão
+ * Guarda Civil Municipal
+ * =========================================
+ * SISTEMA DE TESTE — Projeto acadêmico (TG/TC)
+ * Desenvolvido 100% por:
+ * Autor   : Rafaela Cristina Alcântara da Silva
+ * GitHub  : https://github.com/rafaela13c
+ * LinkedIn: https://www.linkedin.com/in/rafaela-cas1308/
+ * Licença : CC BY-NC-SA 4.0
+ * =========================================
+ * INSTRUÇÕES DE CONFIGURAÇÃO:
+ *
+ * 1. Copie este arquivo para: config/database.php
+ *    cp config/database.php.example config/database.php
+ *
+ * 2. Preencha as credenciais do seu servidor MySQL abaixo.
+ *
+ * ⚠️ NUNCA commite o arquivo config/database.php no GitHub!
+ *    Ele está protegido pelo .gitignore.
+ * =========================================
+ */
+
+// ─── Configurações de Conexão com o Banco ──────────────────
+define('DB_HOST',    'localhost');           // Host do MySQL (geralmente localhost)
+define('DB_PORT',    '3306');                // Porta do MySQL
+define('DB_NAME',    'sig_gcm');             // Nome do banco de dados
+define('DB_USER',    'seu_usuario_aqui');    // Usuário do MySQL
+define('DB_PASS',    'sua_senha_aqui');      // Senha do MySQL
+define('DB_CHARSET', 'utf8mb4');            // Charset (não altere)
